@@ -8,8 +8,8 @@ import {GUI} from 'https://threejsfundamentals.org/threejs/../3rdparty/dat.gui.m
 
 function main() {
   var obstacleposition = [];
-  var start_flag = 0;
-  var options = {
+  var start_flag = 0;   //flag indicating game start
+  var options = {       //controllers initialization
     speed : 4,
     perspective : false,
     background_color : new THREE.Color(0xB1E1FF),
@@ -63,7 +63,7 @@ function main() {
   });
 
 
-  {//road
+  { //road
     const planeSize = 40;
     const loader = new THREE.TextureLoader();
     const texture = loader.load('./street.jpg');
@@ -107,7 +107,7 @@ function main() {
   
     }
 
-  {
+  { //road side
     const planeSize = 40;
     const loader = new THREE.TextureLoader();
     const texture = loader.load('./grass.jpg');
@@ -152,7 +152,7 @@ function main() {
     scene.add(light.target);
   }
 
-  {
+  { //car
     const mtlLoader = new MTLLoader();
     mtlLoader.load('./bugatti_final.mtl', (mtlParseResult) => {
       const objLoader = new OBJLoader2();
@@ -166,7 +166,7 @@ function main() {
     });
   }
 
-  {
+  { //road barrier algorithm
     const mtlLoader = new MTLLoader();
     mtlLoader.load('./Road_Barrier.mtl', (mtlParseResult) => {
       const objLoader = new OBJLoader2();
